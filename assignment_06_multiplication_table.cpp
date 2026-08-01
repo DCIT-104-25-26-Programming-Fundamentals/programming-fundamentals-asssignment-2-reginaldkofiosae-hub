@@ -57,3 +57,74 @@
 #include <iostream>
 using namespace std;
 
+
+// Part A - Generate a single multiplication table
+void singleTable(int number)
+{
+    cout << "Multiplication Table for " << number << ":" << endl;
+
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << number << " x " << i << " = " << number * i << endl;
+    }
+}
+
+// Part B - Generate tables from 1 to N
+void tablesFromOneToN(int n)
+{
+    for (int number = 1; number <= n; number++)
+    {
+        cout << "\nMultiplication Table for " << number << ":" << endl;
+
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << number << " x " << i << " = " << number * i << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
+
+int main()
+{
+    int choice;
+    int number;
+
+    cout << "1. Single Multiplication Table" << endl;
+    cout << "2. Tables from 1 to N" << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        cout << "Enter a number: ";
+        cin >> number;
+
+        if (number <= 0)
+        {
+            cout << "Error: Number must be positive." << endl;
+            return 0;
+        }
+
+        singleTable(number);
+    }
+    else if (choice == 2)
+    {
+        cout << "Enter N: ";
+        cin >> number;
+
+        if (number <= 0)
+        {
+            cout << "Error: Number must be positive." << endl;
+            return 0;
+        }
+
+        tablesFromOneToN(number);
+    }
+    else
+    {
+        cout << "Invalid choice." << endl;
+    }
+
+    return 0;
+}
